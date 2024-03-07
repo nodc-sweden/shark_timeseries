@@ -1,0 +1,1132 @@
+{
+    "SLÄGGÖ": {
+        "TYPE": "MONTHLY",
+        "BASIN": "SKAGERACK COASTAL",
+        "STATN": "SLÄGGÖ",
+        "Display_name": "SLÄGGÖ",
+        "STN_BW": 50.0,
+        "BASIN_BW": 50.0,
+        "BASIN_SEVM": "Skagerrak kust",
+        "HAVET_BW": 50.0
+    },
+    "Å13": {
+        "TYPE": "MONTHLY",
+        "BASIN": "SKAGERACK",
+        "STATN": "Å13",
+        "Display_name": "Å13",
+        "STN_BW": 75.0,
+        "BASIN_BW": 75.0,
+        "BASIN_SEVM": "Skagerrak",
+        "HAVET_BW": 75.0
+    },
+    "Å14": {
+        "TYPE": "MONTHLY",
+        "BASIN": "SKAGERACK",
+        "STATN": "Å14",
+        "Display_name": "Å14",
+        "STN_BW": 90.0,
+        "BASIN_BW": 75.0,
+        "BASIN_SEVM": "Skagerrak ctd",
+        "HAVET_BW": 90.0
+    },
+    "Å15": {
+        "TYPE": "MONTHLY",
+        "BASIN": "SKAGERACK",
+        "STATN": "Å15",
+        "Display_name": "Å15",
+        "STN_BW": 125.0,
+        "BASIN_BW": 75.0,
+        "BASIN_SEVM": "Skagerrak",
+        "HAVET_BW": 75.0
+    },
+    "Å16": {
+        "TYPE": "MONTHLY",
+        "BASIN": "SKAGERACK",
+        "STATN": "Å16",
+        "Display_name": "Å16",
+        "STN_BW": 190.0,
+        "BASIN_BW": 75.0,
+        "BASIN_SEVM": "Skagerrak ctd",
+        "HAVET_BW": 90.0
+    },
+    "Å17": {
+        "TYPE": "MONTHLY",
+        "BASIN": "SKAGERACK",
+        "STATN": "Å17",
+        "Display_name": "Å17",
+        "STN_BW": 300.0,
+        "BASIN_BW": 75.0,
+        "BASIN_SEVM": "Skagerrak",
+        "HAVET_BW": 75.0
+    },
+    "P2": {
+        "TYPE": "MONTHLY",
+        "BASIN": "SKAGERACK",
+        "STATN": "P2",
+        "Display_name": "P2",
+        "STN_BW": 75.0,
+        "BASIN_BW": 75.0,
+        "BASIN_SEVM": "Skagerrak",
+        "HAVET_BW": 75.0
+    },
+    "FLADEN": {
+        "TYPE": "MONTHLY",
+        "BASIN": "KATTEGAT",
+        "STATN": "FLADEN",
+        "Display_name": "FLADEN",
+        "STN_BW": 70.0,
+        "BASIN_BW": 50.0,
+        "BASIN_SEVM": "Kattegat",
+        "HAVET_BW": 30.0
+    },
+    "ANHOLT E": {
+        "TYPE": "MONTHLY",
+        "BASIN": "KATTEGAT",
+        "STATN": "ANHOLT E",
+        "Display_name": "ANHOLT E",
+        "STN_BW": 50.0,
+        "BASIN_BW": 50.0,
+        "BASIN_SEVM": "Kattegat",
+        "HAVET_BW": 30.0
+    },
+    "N14 FALKENBERG": {
+        "TYPE": "MONTHLY",
+        "BASIN": "KATTEGAT COASTAL",
+        "STATN": "N14 FALKENBERG",
+        "Display_name": "N14 FALKENBERG",
+        "STN_BW": 25.0,
+        "BASIN_BW": 25.0,
+        "BASIN_SEVM": "Kattegat kust",
+        "HAVET_BW": 25.0
+    },
+    "L:a Middelgrund": {
+        "TYPE": "MAPPING",
+        "BASIN": "KATTEGAT",
+        "STATN": "L:a Middelgrund",
+        "Display_name": "L:a Middelgrund",
+        "STN_BW": 30.0,
+        "BASIN_BW": 50.0,
+        "BASIN_SEVM": "Kattegat",
+        "HAVET_BW": 30.0
+    },
+    "S:a Middelgrund": {
+        "TYPE": "MAPPING",
+        "BASIN": "KATTEGAT",
+        "STATN": "S:a Middelgrund",
+        "Display_name": "S:a Middelgrund",
+        "STN_BW": 30.0,
+        "BASIN_BW": 50.0,
+        "BASIN_SEVM": "Kattegat",
+        "HAVET_BW": 30.0
+    },
+    "409 AAlborg bukt": {
+        "TYPE": "MAPPING",
+        "BASIN": "KATTEGAT",
+        "STATN": "409 AAlborg bukt",
+        "Display_name": "409 AAlborg bukt",
+        "STN_BW": 30.0,
+        "BASIN_BW": 50.0,
+        "BASIN_SEVM": "Kattegat",
+        "HAVET_BW": 30.0
+    },
+    "925 Kattegatt SW": {
+        "TYPE": "MAPPING",
+        "BASIN": "KATTEGAT",
+        "STATN": "925 Kattegatt SW",
+        "Display_name": "925 Kattegatt SW",
+        "STN_BW": 30.0,
+        "BASIN_BW": 50.0,
+        "BASIN_SEVM": "Kattegat",
+        "HAVET_BW": 30.0
+    },
+    "W LANDSKRONA": {
+        "TYPE": "MONTHLY",
+        "BASIN": "THE SOUND",
+        "STATN": "W LANDSKRONA",
+        "Display_name": "W LANDSKRONA",
+        "STN_BW": 40.0,
+        "BASIN_BW": 40.0,
+        "BASIN_SEVM": "Öresund",
+        "HAVET_BW": 40.0
+    },
+    "BY1": {
+        "TYPE": "MONTHLY",
+        "BASIN": "ARKONA",
+        "STATN": "BY1",
+        "Display_name": "BY1",
+        "STN_BW": 40.0,
+        "BASIN_BW": 40.0,
+        "BASIN_SEVM": "Södra Egentliga Östersjön",
+        "HAVET_BW": 80.0
+    },
+    "BY2 ARKONA": {
+        "TYPE": "MONTHLY",
+        "BASIN": "ARKONA",
+        "STATN": "BY2 ARKONA",
+        "Display_name": "BY2 ARKONA",
+        "STN_BW": 40.0,
+        "BASIN_BW": 40.0,
+        "BASIN_SEVM": "Södra Egentliga ÖstersjÖn",
+        "HAVET_BW": 80.0
+    },
+    "HANÖBUKTEN": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BORNHOLM",
+        "STATN": "HANÖBUKTEN",
+        "Display_name": "HANÖBUKTEN",
+        "STN_BW": 70.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Södra Egentliga Östersjön",
+        "HAVET_BW": 80.0
+    },
+    "BY4 CHRISTIANSÖ": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BORNHOLM",
+        "STATN": "BY4 CHRISTIANSÖ",
+        "Display_name": "BY4 CHRISTIANSÖ",
+        "STN_BW": 80.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Södra Egentliga Östersjön",
+        "HAVET_BW": 80.0
+    },
+    "BY5 BORNHOLMSDJ": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BORNHOLM",
+        "STATN": "BY5 BORNHOLMSDJ",
+        "Display_name": "BY5 BORNHOLM DEEP",
+        "STN_BW": 80.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Södra Egentliga Östersjön",
+        "HAVET_BW": 80.0
+    },
+    "REF M1V1": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BORNHOLM COASTAL",
+        "STATN": "REF M1V1",
+        "Display_name": "REF M1V1",
+        "STN_BW": 15.0,
+        "BASIN_BW": 15.0,
+        "BASIN_SEVM": "Södra Egentliga Östersjön kust",
+        "HAVET_BW": 15.0
+    },
+    "BCS III-10": {
+        "TYPE": "MONTHLY",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "BCS III-10",
+        "Display_name": "BCS III-10",
+        "STN_BW": 80.0,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Sydöstra Egentliga Östersjön ",
+        "HAVET_BW": 80.0
+    },
+    "PL-P1": {
+        "TYPE": "MAPPING",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "PL-P1",
+        "Display_name": "PL-P1",
+        "STN_BW": null,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Sydöstra Egentliga Östersjön ",
+        "HAVET_BW": 80.0
+    },
+    "PL-P63": {
+        "TYPE": "MAPPING",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "PL-P63",
+        "Display_name": "PL-P63",
+        "STN_BW": null,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Sydöstra Egentliga Östersjön ",
+        "HAVET_BW": 80.0
+    },
+    "BY7 STOLPE RÄNNA": {
+        "TYPE": "MAPPING",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "BY7 STOLPE RÄNNA",
+        "Display_name": "BY7 STOLPE RÄNNA",
+        "STN_BW": 80.0,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Sydöstra Egentliga Östersjön ",
+        "HAVET_BW": 80.0
+    },
+    "BY9 KLAIPEDA": {
+        "TYPE": "MAPPING",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "BY9 KLAIPEDA",
+        "Display_name": "BY9 KLAIPEDA",
+        "STN_BW": 100.0,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Sydöstra Egentliga Östersjön ",
+        "HAVET_BW": 80.0
+    },
+    "BY10": {
+        "TYPE": "MONTHLY",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "BY10",
+        "Display_name": "BY10",
+        "STN_BW": 125.0,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY11": {
+        "TYPE": "MAPPING",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "BY11",
+        "Display_name": "BY11",
+        "STN_BW": 200.0,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY13": {
+        "TYPE": "MAPPING",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "BY13",
+        "Display_name": "BY13",
+        "STN_BW": 100.0,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY15 GOTLANDSDJ": {
+        "TYPE": "MONTHLY",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "BY15 GOTLANDSDJ",
+        "Display_name": "BY15 GOTLAND DEEP",
+        "STN_BW": 225.0,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY19": {
+        "TYPE": "MAPPING",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "BY19",
+        "Display_name": "BY19",
+        "STN_BW": null,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY20 FÅRÖDJ": {
+        "TYPE": "MONTHLY",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "BY20 FÅRÖDJ",
+        "Display_name": "BY20 FÅRÖ DEEP",
+        "STN_BW": 175.0,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY21": {
+        "TYPE": "MAPPING",
+        "BASIN": "EASTERN GOTLAND BASIN",
+        "STATN": "BY21",
+        "Display_name": "BY21",
+        "STN_BW": 100.0,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY27": {
+        "TYPE": "MAPPING",
+        "BASIN": "NORTHERN BALTIC PROPER",
+        "STATN": "BY27",
+        "Display_name": "BY27",
+        "STN_BW": 170.0,
+        "BASIN_BW": 170.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY28": {
+        "TYPE": "MAPPING",
+        "BASIN": "NORTHERN BALTIC PROPER",
+        "STATN": "BY28",
+        "Display_name": "BY28",
+        "STN_BW": 180.0,
+        "BASIN_BW": 170.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY29 / LL19": {
+        "TYPE": "MONTHLY",
+        "BASIN": "NORTHERN BALTIC PROPER",
+        "STATN": "BY29 / LL19",
+        "Display_name": "BY29 / LL19",
+        "STN_BW": 170.0,
+        "BASIN_BW": 170.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY30": {
+        "TYPE": "MAPPING",
+        "BASIN": "WESTERN GOTLAND BASIN",
+        "STATN": "BY30",
+        "Display_name": "BY30",
+        "STN_BW": null,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY31 LANDSORTSDJ": {
+        "TYPE": "MONTHLY",
+        "BASIN": "WESTERN GOTLAND BASIN",
+        "STATN": "BY31 LANDSORTSDJ",
+        "Display_name": "BY31 LANDSORT DEEP",
+        "STN_BW": 440.0,
+        "BASIN_BW": 180.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "B1": {
+        "TYPE": "MONTHLY",
+        "BASIN": "WESTERN GOTLAND BASIN COASTAL",
+        "STATN": "B1",
+        "Display_name": "B1 (ASKÖ)",
+        "STN_BW": 40.0,
+        "BASIN_BW": 40.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön kust",
+        "HAVET_BW": 40.0
+    },
+    "BY32 NORRKÖPINGSDJ": {
+        "TYPE": "MONTHLY",
+        "BASIN": "WESTERN GOTLAND BASIN",
+        "STATN": "BY32 NORRKÖPINGSDJ",
+        "Display_name": "BY32 NORRKÖPING DEEP",
+        "STN_BW": 175.0,
+        "BASIN_BW": 150.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY36": {
+        "TYPE": "MAPPING",
+        "BASIN": "WESTERN GOTLAND BASIN",
+        "STATN": "BY36",
+        "Display_name": "BY36",
+        "STN_BW": 130.0,
+        "BASIN_BW": 150.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY38 KARLSÖDJ": {
+        "TYPE": "MONTHLY",
+        "BASIN": "WESTERN GOTLAND BASIN",
+        "STATN": "BY38 KARLSÖDJ",
+        "Display_name": "BY38 KARLSÖ DEEP",
+        "STN_BW": 100.0,
+        "BASIN_BW": 150.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "BY39 ÖLANDS S UDDE": {
+        "TYPE": "MONTHLY",
+        "BASIN": "WESTERN GOTLAND BASIN",
+        "STATN": "BY39 ÖLANDS S UDDE",
+        "Display_name": "BY39 ÖLANDS S UDDE",
+        "STN_BW": 45.0,
+        "BASIN_BW": 150.0,
+        "BASIN_SEVM": "Centrala och Norra Östersjön",
+        "HAVET_BW": 180.0
+    },
+    "MS4 / C14": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "MS4 / C14",
+        "Display_name": "MS4 / C14",
+        "STN_BW": 80.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "C3": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "C3",
+        "Display_name": "C3",
+        "STN_BW": 180.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "US5B / C1": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "US5B / C1",
+        "Display_name": "US5B / C1",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SR5 / C4": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SR5 / C4",
+        "Display_name": "SR5 / C4",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "F26 / C15": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "F26 / C15",
+        "Display_name": "F26 / C15",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "F33 GRUNDKALLEN": {
+        "TYPE": "MAPPING",
+        "BASIN": "AALAND SEA",
+        "STATN": "F33 GRUNDKALLEN",
+        "Display_name": "F33 GRUNDKALLEN",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Ålands hav",
+        "HAVET_BW": null
+    },
+    "F64 SOLOVJEVA": {
+        "TYPE": "MAPPING",
+        "BASIN": "AALAND SEA",
+        "STATN": "F64 SOLOVJEVA",
+        "Display_name": "F64 SOLOVJEVA",
+        "STN_BW": null,
+        "BASIN_BW": null,
+        "BASIN_SEVM": "Ålands hav",
+        "HAVET_BW": null
+    },
+    "TRÖSKELN ÅLANDS HAV": {
+        "TYPE": "MAPPING",
+        "BASIN": "AALAND SEA",
+        "STATN": "TRÖSKELN ÅLANDS HAV",
+        "Display_name": "TRÖSKELN ÅLANDS HAV",
+        "STN_BW": null,
+        "BASIN_BW": null,
+        "BASIN_SEVM": "Ålands hav",
+        "HAVET_BW": null
+    },
+    "SR1A": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SR1A",
+        "Display_name": "SR1A",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SR3": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SR3",
+        "Display_name": "SR3",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SR7": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SR7",
+        "Display_name": "SR7",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SR8": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SR8",
+        "Display_name": "SR8",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SS29": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SS29",
+        "Display_name": "SS29",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "US2 ULVÖDJ": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "US2 ULVÖDJ",
+        "Display_name": "US2 ULVÖ DEEP",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "US3 / C6": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "US3 / C6",
+        "Display_name": "US3 / C6",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "US7": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "US7",
+        "Display_name": "US7",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "MS2": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "MS2",
+        "Display_name": "MS2",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "MS6": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "MS6",
+        "Display_name": "MS6",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "GAVIK-1": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BOTHNIAN SEA COASTAL",
+        "STATN": "GAVIK-1",
+        "Display_name": "GAVIK-1",
+        "STN_BW": 70.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "B7 & NB1 / B3": {
+        "TYPE": "MONTHLY",
+        "BASIN": "THE QUARK",
+        "STATN": "B7 & NB1 / B3",
+        "Display_name": "B7 & NB1 / B3",
+        "STN_BW": 20.0,
+        "BASIN_BW": 20.0,
+        "BASIN_SEVM": "Kvarken",
+        "HAVET_BW": 20.0
+    },
+    "NB1 / B3": {
+        "TYPE": "MONTHLY",
+        "BASIN": "THE QUARK",
+        "STATN": "NB1 / B3",
+        "Display_name": "NB1 / B3",
+        "STN_BW": 20.0,
+        "BASIN_BW": 20.0,
+        "BASIN_SEVM": "Kvarken",
+        "HAVET_BW": 20.0
+    },
+    "F9 / A13": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F9 / A13",
+        "Display_name": "F9 / A13",
+        "STN_BW": 120.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F3 / A5": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F3 / A5",
+        "Display_name": "F3 / A5",
+        "STN_BW": 80.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F2": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F2",
+        "Display_name": "F2",
+        "STN_BW": 80.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F13": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F13",
+        "Display_name": "F13",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F16": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F16",
+        "Display_name": "F16",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F18 SYDOSTBROTTEN": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F18 SYDOSTBROTTEN",
+        "Display_name": "F18 SYDOSTBROTTEN",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "RR1": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "RR1",
+        "Display_name": "RR1",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "RR5": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "RR5",
+        "Display_name": "RR5",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "RR7": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "RR7",
+        "Display_name": "RR7",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "RÅNEÅ-1": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BOTHNIAN BAY COASTAL",
+        "STATN": "RÅNEÅ-1",
+        "Display_name": "RÅNEÅ-1",
+        "STN_BW": 8.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "RÅNEÅ-2": {
+        "TYPE": "MONTHLY",
+        "BASIN": "BOTHNIAN BAY COASTAL",
+        "STATN": "RÅNEÅ-2",
+        "Display_name": "RÅNEÅ-2",
+        "STN_BW": 10.0,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "BO2": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "BO2",
+        "Display_name": "BO2",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "BO3": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "BO3",
+        "Display_name": "BO3",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "BO4": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "BO4",
+        "Display_name": "BO4",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "BO5": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "BO5",
+        "Display_name": "BO5",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "RR3": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "RR3",
+        "Display_name": "RR3",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "RR4": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "RR4",
+        "Display_name": "RR4",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "RR6": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "RR6",
+        "Display_name": "RR6",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "C-VI": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "C-VI",
+        "Display_name": "C-VI",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "GBY-44": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "GBY-44",
+        "Display_name": "GBY-44",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "GBY-45": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "GBY-45",
+        "Display_name": "GBY-45",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "GBY-46": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "GBY-46",
+        "Display_name": "GBY-46",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "SM3": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "SM3",
+        "Display_name": "SM3",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F6": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F6",
+        "Display_name": "F6",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F12": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F12",
+        "Display_name": "F12",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F7": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F7",
+        "Display_name": "F7",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F8": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F8",
+        "Display_name": "F8",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F3": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F3",
+        "Display_name": "F3",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F9": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F9",
+        "Display_name": "F9",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "10W F3": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "10W F3",
+        "Display_name": "10W F3",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "20W F3": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "20W F3",
+        "Display_name": "20W F3",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "3E F9": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "3E F9",
+        "Display_name": "3E F9",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "4E F9": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "4E F9",
+        "Display_name": "4E F9",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "F9 (VICINITY)": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN BAY",
+        "STATN": "F9 (VICINITY)",
+        "Display_name": "F9 (VICINITY)",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenviken",
+        "HAVET_BW": 80.0
+    },
+    "FINNGRUNDET": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "FINNGRUNDET",
+        "Display_name": "FINNGRUNDET",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SR2": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SR2",
+        "Display_name": "SR2",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SR4": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SR4",
+        "Display_name": "SR4A",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "MS3": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "MS3",
+        "Display_name": "MS3",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "MS4": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "MS4",
+        "Display_name": "MS4",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "MS5": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "MS5",
+        "Display_name": "MS5",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "MS7": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "MS7",
+        "Display_name": "MS7",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SS28": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SS28",
+        "Display_name": "SS28",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SS28B": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SS28B",
+        "Display_name": "SS28B",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SS29B": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SS29B",
+        "Display_name": "SS29B",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SS31": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SS31",
+        "Display_name": "SS31",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SS31B": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SS31B",
+        "Display_name": "SS31B",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "SS32": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "SS32",
+        "Display_name": "SS32",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "US6": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "US6",
+        "Display_name": "US6",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    },
+    "US6B": {
+        "TYPE": "MAPPING",
+        "BASIN": "BOTHNIAN SEA",
+        "STATN": "US6B",
+        "Display_name": "US6B",
+        "STN_BW": null,
+        "BASIN_BW": 80.0,
+        "BASIN_SEVM": "Bottenhavet",
+        "HAVET_BW": 80.0
+    }
+}
