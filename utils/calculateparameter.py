@@ -62,7 +62,7 @@ def get_org(tot, inorg, qinorg, qtot):
         return np.nan
 
 
-def get_DIN(sumNOx, nh4):
+def get_din_simple(sumNOx, nh4):
 
     if any((np.isnan(nh4), np.isnan(sumNOx))):
         return np.nan
@@ -70,7 +70,7 @@ def get_DIN(sumNOx, nh4):
         return nh4 + sumNOx
 
 
-def get_DIN_stb(
+def get_din_complex(
     no2, no3, nox, nh4, h2s, qh2s, qnh4, qnox, qno3, qno2, ignore_qf=["?", "B", "S"]
 ):
     """
@@ -211,7 +211,7 @@ def get_string_qf_from_float_qf(qf):
 
 def get_O2_H2S(o2, h2s, qo2='', qh2s=''):
     """
-    returns the oxygen or negative oxygen (H2S*-0.04488 )where appropriate according to data and qflags
+    returns the oxygen or negative oxygen (H2S*-0.04488) where appropriate according to data and qflags
     """
 
     # first some data quality checks

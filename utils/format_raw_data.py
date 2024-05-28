@@ -163,7 +163,7 @@ class FormatData():
             "O2_H2S", "H2S", "Q_H2S", "H2S_padded",
             "PHOS", "PTOT", "orgP", "SIO3-SI", 
             "NTRZ", "Q_NTRZ", "NTRA", "Q_NTRA", "NTRI", "Q_NTRI", "NTOT", "AMON", "Q_AMON",
-            "DIN", "DIN_stb", "orgN", "sumNOx", "CPHL", "PH", "ALKY"
+            "din_simple", "din_complex", "orgN", "sumNOx", "CPHL", "PH", "ALKY"
         ]
         columns_to_keep.extend(self.columns_to_keep)
 
@@ -379,14 +379,14 @@ class FormatData():
             ),
             axis=1,
         )
-        print("adding calculated DIN...")
-        data.loc[:, "DIN"] = data.copy().apply(
-            lambda row: calculateparameter.get_DIN(row.sumNOx, row.AMON), axis=1
+        print("adding simple DIN...")
+        data.loc[:, "din_simple"] = data.copy().apply(
+            lambda row: calculateparameter.get_din_simple(row.sumNOx, row.AMON), axis=1
         )
         # no2, no3, nox, nh4, h2s, qh2s, qnh4, qnox, qno3,
-        print("adding DIN a´la sharktoolbox...")
-        data.loc[:, "DIN_stb"] = data.copy().apply(
-            lambda row: calculateparameter.get_DIN_stb(
+        print("adding complex DIN...")
+        data.loc[:, "din_complex"] = data.copy().apply(
+            lambda row: calculateparameter.get_din_complex(
                 row.NTRI,
                 row.NTRA,
                 row.NTRZ,
@@ -402,7 +402,7 @@ class FormatData():
         )
         print("adding calculated organic N and P ...")
         data.loc[:, "orgN"] = data.copy().apply(
-            lambda row: calculateparameter.get_org(row.NTOT, row.DIN, "", row.Q_NTOT), axis=1
+            lambda row: calculateparameter.get_org(row.NTOT, row.din_complex, "", row.Q_NTOT), axis=1
         )
         data.loc[:, "orgP"] = data.copy().apply(
             lambda row: calculateparameter.get_org(row.PTOT, row.PHOS, "", row.Q_PTOT), axis=1

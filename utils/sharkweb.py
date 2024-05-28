@@ -14,14 +14,14 @@ class Datasource():
     Data is downloaded from sharkweb with the short headers
 
     """
-    def __init__(self, result_directory, datatype: str, year_interval: list, stations: list, 
+    def __init__(self, result_directory, datatype: str, year_interval: list, stations: list = [], basins: list = [], bounds: list = [],
                  no_download: bool = False):
         
         self.no_download = no_download
         self.result_directory = result_directory
-        self._download(datatype, year_interval, stations)
+        self._download(datatype, year_interval, stations, bounds)
 
-    def _download(self, datatype, year_interval, stations):
+    def _download(self, datatype: str, year_interval: list, stations: list = [], basins: list = [], bounds: list = []):
 
         if not datatype:
             raise AssertionError("ERROR: no download, missing datatype")
@@ -50,8 +50,9 @@ class Datasource():
                 'toYear': year_interval[1],
                 'dataTypes': [datatype],
                 'projects': ["NAT Nationell miljöövervakning"],
-                # 'bounds': [[10.4, 58.2], [10.6, 58.3]],
-                'stationName': stations
+                'bounds': bounds,
+                'stationName': stations,
+                'seaBasins': basins,
             },
 
             'downloadId': str(uuid.uuid4()),

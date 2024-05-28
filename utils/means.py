@@ -171,7 +171,7 @@ class Means():
         else:
             raise ValueError("Invalid depth, must be a list or a str")
         
-        print(f"Bw dataselcetion columns: {df_selection.columns}")
+        print(f"BW dataselcetion columns: {df_selection.columns}")
         return df_selection
 
     def calculate_depth_means(self, depth, BW_type=""):
@@ -179,7 +179,7 @@ class Means():
         df_selection = self.filter_by_depth(depth, BW_type)
 
         value_cols = ["SALT", "TEMP", "PHOS", "SIO3-SI", "sumNOx", "NTRA", 
-                    "NTRZ", "AMON", "DIN", "O2_H2S", "O2sat", "H2S_padded", "NTOT", "PTOT", "CPHL", 
+                    "NTRZ", "AMON", "DIN_complex", "DIN_simple", "O2_H2S", "O2sat", "H2S_padded", "NTOT", "PTOT", "CPHL", 
                     "DEPH", "PH", "ALKY",]
 
         # Calculate mean by station and date
