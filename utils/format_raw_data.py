@@ -337,10 +337,11 @@ class FormatData():
     
     def filter_by_parameter(self, data: pd.DataFrame, parameters: list = []):
         data.sort_values(by=["STATN", "REG_ID", "YEAR", "MONTH", "DAY", "SDATE"], inplace=True)
-        parameters.extend(["profile", "DEPH", "STATN", "REG_ID", "YEAR", "MONTH", "DAY", "SDATE"])
-        print(f'remove the following columns that are not in datas: {[column for column in parameters if column not in data.columns]}')
-        [parameters.remove(column) for column in parameters if column not in data.columns]
-        return data.loc[:, parameters]
+        out_parameters = parameters + ["profile", "DEPH", "STATN", "REG_ID", "YEAR", "MONTH", "DAY", "SDATE"]
+        print(f'remove the following columns that are not in data: {[column for column in out_parameters if column not in data.columns]}')
+        print([column for column in out_parameters if column in data.columns])
+
+        return data.loc[:, [column for column in out_parameters if column in data.columns]]
 
     def calculate_parameters(self, data):
         """

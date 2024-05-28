@@ -15,18 +15,20 @@ class Datasource():
 
     """
     def __init__(self, result_directory, datatype: str, year_interval: list, stations: list = [], basins: list = [], bounds: list = [],
-                 no_download: bool = False):
+                 no_download: bool = False, name: str =''):
         
         self.no_download = no_download
         self.result_directory = result_directory
-        self._download(datatype, year_interval, stations, bounds)
+        print(name)
+        self._download(datatype, year_interval, stations, basins=basins, bounds=bounds, name=name)
 
-    def _download(self, datatype: str, year_interval: list, stations: list = [], basins: list = [], bounds: list = []):
+    def _download(self, datatype: str, year_interval: list, stations: list = [], basins: list = [], bounds: list = [], name: str = ''):
 
         if not datatype:
             raise AssertionError("ERROR: no download, missing datatype")
-
-        self.filename = self._get_filepath(datatype, year_interval)
+        
+        print(name)
+        self.filename = self._get_filepath(name, datatype, year_interval)
 
         if self.no_download:
             if not self.filename.exists():
@@ -91,9 +93,9 @@ class Datasource():
         
         return ""
     
-    def _get_filepath(self, datatype, year_interval):
+    def _get_filepath(self, name, datatype, year_interval):
 
-        return pathlib.Path(self.result_directory, f'temp\sharkweb_{datatype}_{year_interval[0]}-{year_interval[1]}.txt')
+        return pathlib.Path(self.result_directory, f'temp\sharkweb_{name}_{datatype}_{year_interval[0]}-{year_interval[1]}.txt')
 
 
 {

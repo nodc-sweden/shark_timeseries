@@ -179,7 +179,7 @@ class Means():
         df_selection = self.filter_by_depth(depth, BW_type)
 
         value_cols = ["SALT", "TEMP", "PHOS", "SIO3-SI", "sumNOx", "NTRA", 
-                    "NTRZ", "AMON", "DIN_complex", "DIN_simple", "O2_H2S", "O2sat", "H2S_padded", "NTOT", "PTOT", "CPHL", 
+                    "NTRZ", "AMON", "din_complex", "din_simple", "O2_H2S", "O2sat", "H2S_padded", "NTOT", "PTOT", "CPHL", 
                     "DEPH", "PH", "ALKY",]
 
         # Calculate mean by station and date
@@ -231,13 +231,23 @@ class Means():
     #     df_depth_mean = self.calculate_depth_means("BW", BW_type)
     #     self.save_data(save_path=f"{save_path}_{BW_type}_bottom_mean", data=df_depth_mean)
 
-    def calculate_month_mean(self, data: pd.DataFrame, param: str):
+    def calculate_month_mean(self, data: pd.DataFrame, param: list):
         # Calculate mean by station and date
         # Leaves only the columns used in groupby call and values_cols
+        cols = ["STATN", "REG_ID", "YEAR", "MONTH", "Depth_interval"]
+        print(data.dtypes)
+        print(param)
+        print(pd.melt(data, id_vars=cols, value_vars=param).head(2))
+        print(param)
+        long_df = pd.melt(data, id_vars=cols, value_vars=param)
+        print(long_df['variable'].unique())
+        long_df.astype({'value': 'float'})
+        print(long_df.columns.unique())
+        print(long_df.dtypes)
         mean_data = (
-            data.groupby(["STATN", "REG_ID", "YEAR", "MONTH", "Depth_interval"])
-            .agg(mean=(param, 'mean'),
-                count=(param, 'count'))
+            long_df.groupby(["STATN", "REG_ID", "YEAR", "MONTH", "Depth_interval", "variable"])
+            .agg(month_mean=('value', 'mean'),
+                count=('value', 'count'))
             .reset_index()
         )
         return mean_data
@@ -245,23 +255,34 @@ class Means():
     def calculate_season_mean(self, data: pd.DataFrame, param: str, months: list = [1,2,3,4,5,6,7,8,9,10,11,12]):
         # Calculate mean by station and date
         # Leaves only the columns used in groupby call and values_cols
+        print('first calculating month mean....')
+        month_mean = self.calculate_month_mean(data, param)
+        print(month_mean.head(3))
+        print('then calculating year mean on the month mean timeseries...')
 
-        mean_data = (
-            data.loc[data['MONTH'].isin(months)].groupby(["STATN", "REG_ID", "YEAR", "MONTH", "Depth_interval"])
-            .agg(mean=(param, 'mean'),
+        season_mean = (
+            month_mean.loc[data['MONTH'].isin(months)].groupby(["STATN", "REG_ID", "YEAR", "MONTH", "Depth_interval"])
+            .agg(season_mean=(param, 'mean'),
                 count=(param, 'count'))
             .reset_index()
         )
-        return mean_data
+        return season_mean
     
     def calculate_year_mean(self, data: pd.DataFrame, param: str):
-        mean_data = (data.groupby(["STATN", "REG_ID", "YEAR", "Depth_interval"])
-                    .agg(mean=('mean', 'mean'),
-                        count=('mean', 'count'))
-                    .reset_index()
-                )
+        print('first calculating month mean....')
+        month_mean = self.calculate_month_mean(data, param)
+        print(month_mean.head(3))
+        print('then calculating year mean on the month mean timeseries...')
+        year_mean = month_mean.groupby(["STATN", "REG_ID", "YEAR", "Depth_interval", "variable"]).agg(year_mean=('month_mean', 'mean'),
+                        count=('month_mean', 'count')).reset_index()
+        
+        # mean_data = (data.groupby(["STATN", "REG_ID", "YEAR", "Depth_interval"])
+        #             .agg(mean=('mean', 'mean'),
+        #                 count=('mean', 'count'))
+        #             .reset_index()
+        #         )
 
-        return mean_data
+        return year_mean
         
 if __name__ == "__main__":
     # dataframe to calculate means on
