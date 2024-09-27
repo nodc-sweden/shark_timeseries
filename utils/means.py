@@ -98,20 +98,6 @@ class Means():
             else:
                 return f"{min(depth)}-{max(depth)} m"
 
-    def hhfilter_by_depth(self, depth):
-        """
-        Arguments: dataframe and depths to filter on.
-        Returns filtered data with an added column specifying the depth interval.
-        replace earlier function with this and the two above
-        """
-
-        depth_range = self._get_depth_range(depth)
-        depth_str = self._get_depth_str(depth)
-        print("Filtering dataframe to depth range: {}-{} m".format(depth_range[0], depth_range[1]))
-        df_selection = self.data.loc[(self.data.DEPH >= depth_range[0]) & (self.data.DEPH <= depth_range[1])]
-        df_selection["Depth_interval"] = depth_str
-        return df_selection
-
     def filter_BW(self, BW_type):
 
         print("Constructing bottomwater dataframe.....")
@@ -234,47 +220,119 @@ class Means():
     def calculate_month_mean(self, data: pd.DataFrame, param: list):
         # Calculate mean by station and date
         # Leaves only the columns used in groupby call and values_cols
-        cols = ["STATN", "REG_ID", "YEAR", "MONTH", "Depth_interval"]
-        print(data.dtypes)
-        print(param)
-        print(pd.melt(data, id_vars=cols, value_vars=param).head(2))
-        print(param)
-        long_df = pd.melt(data, id_vars=cols, value_vars=param)
-        print(long_df['variable'].unique())
-        long_df.astype({'value': 'float'})
-        print(long_df.columns.unique())
-        print(long_df.dtypes)
-        mean_data = (
-            long_df.groupby(["STATN", "REG_ID", "YEAR", "MONTH", "Depth_interval", "variable"])
-            .agg(month_mean=('value', 'mean'),
-                count=('value', 'count'))
-            .reset_index()
-        )
+        group_cols = ["STATN", "REG_ID", "YEAR", "MONTH", "Depth_interval"]
+        
+        mean_data = data.groupby(group_cols).mean().reset_index().round(3)
         return mean_data
     
-    def calculate_season_mean(self, data: pd.DataFrame, param: str, months: list = [1,2,3,4,5,6,7,8,9,10,11,12]):
+    def calculate_season_mean(self, data: pd.DataFrame, param: list, months: list = [1,2,3,4,5,6,7,8,9,10,11,12], suffix = 'yearly', first_month_mean = True):
+        
+        # Definiera kolumner att gruppera på
+        group_cols = ["STATN", "REG_ID", "YEAR", "Depth_interval"]
+
+        # Skapa en dictionary med aggregeringsfunktionerna
+
+        if all([j - i == 1 for i, j in zip(months[:-1],months[1:])]):
+            print(f"not winter {months}")
+
+        if all((m in months and m not in [11] for m in [1, 12])):
+            suffix = 'vinter'
+            mask = data['MONTH'].isin([12])
+            data.loc[mask, "YEAR"] = data.loc[mask, "YEAR"] + 1
+        
+        if any((m in months for m in [4, 5])):
+            suffix = 'vår'
+        if any((m in months for m in [6,7,8])):
+            suffix = 'sommar'
+        if any((m in months for m in [9,10,11])):
+            suffix = 'höst'
+
+        # välj ut data
+        data_selection = data.loc[data['MONTH'].isin(months)][param+group_cols+['MONTH']].copy(deep=True)
+
+        if first_month_mean:
+            # print('first calculating month mean....')
+            data_selection = self.calculate_month_mean(data_selection, param)
+            # print('then calculating season mean on the month mean timeseries...')
+
+        # Initiera en lista för att samla aggregeringsresultaten
+        results = []
+        # Utför gruppering och aggregering
+        for variable in param:
+            grouped = data_selection.dropna(subset=[variable]).groupby(group_cols).agg(value=(variable, 'mean'),
+                    count=(variable, 'count'),
+                    unique=('MONTH', 'unique'))
+            # Återställ index för att få en platt DataFrame
+            grouped = grouped.reset_index().round(3)
+            grouped['depth_desc'] = grouped['Depth_interval'].apply(lambda x: 'Bottenvatten' if '>' in x else x)
+            grouped['Mätvariabel'] = variable + " " + grouped['depth_desc'] + " - " + suffix
+            grouped['variable'] = variable
+            grouped['period'] = suffix
+            results.append(grouped)
+
+        # Kombinera alla aggregeringsresultaten till en enda DataFrame
+        final_result = pd.concat(results, ignore_index=True)
+
+        return final_result
         # Calculate mean by station and date
         # Leaves only the columns used in groupby call and values_cols
-        print('first calculating month mean....')
-        month_mean = self.calculate_month_mean(data, param)
-        print(month_mean.head(3))
-        print('then calculating year mean on the month mean timeseries...')
-
+        # print('first calculating month mean....')
+        # month_mean = self.calculate_month_mean(data_selection, param)
+        # print(month_mean.head(3))
+        # print('then calculating season mean on the month mean timeseries...')
         season_mean = (
-            month_mean.loc[data['MONTH'].isin(months)].groupby(["STATN", "REG_ID", "YEAR", "MONTH", "Depth_interval"])
-            .agg(season_mean=(param, 'mean'),
-                count=(param, 'count'))
+            data_selection.loc[data_selection].groupby(["STATN", "REG_ID", "YEAR", "Depth_interval"])
+            .agg(value=(param, 'mean'),
+                count=(param, 'count'),
+                unique=('MONTH', 'unique'))
             .reset_index()
         )
+
+        # Add suffix to all values in the specified column
+        season_mean['variable'] = season_mean['variable'].apply(lambda x: x + '-' + suffix)
+
         return season_mean
     
-    def calculate_year_mean(self, data: pd.DataFrame, param: str):
+    def calculate_year_mean(self, data: pd.DataFrame, param: list, first_month_mean = True):
+
+        # Definiera kolumner att gruppera på
+        group_cols = ["STATN", "REG_ID", "YEAR", "Depth_interval"]
+
+        # filtrera ut endast de kolumner som ska användas:
+        data_selection = data[param+group_cols+['MONTH']].copy(deep=True)
+        # Skapa dictionary för aggregering
+
+        if first_month_mean:
+            # print('first calculating month mean....')
+            data_selection = self.calculate_month_mean(data_selection, param)
+        # Initiera en lista för att samla aggregeringsresultaten
+        results = []
+        # Utför gruppering och aggregering
+        for variable in param:
+            data_selection.dropna(subset=[variable])
+            grouped = data_selection.dropna(subset=[variable]).groupby(group_cols).agg(value=(variable, 'mean'),
+                    count=(variable, 'count'),
+                    unique=('MONTH', 'unique'))
+            # Återställ index för att få en platt DataFrame
+            grouped = grouped.reset_index().round(3)
+            # Skapa en ny kolumn baserat på villkoret med apply och lambda
+            grouped['depth_desc'] = grouped['Depth_interval'].apply(lambda x: 'Bottenvatten' if '>' in x else x)
+            grouped['Mätvariabel'] = variable + " " + grouped['depth_desc'] + " - " + "helår"
+            grouped['variable'] = variable
+            grouped['period'] = 'helår'
+            results.append(grouped)
+
+        # Kombinera alla aggregeringsresultaten till en enda DataFrame
+        final_result = pd.concat(results, ignore_index=True)
+
+        return final_result
         print('first calculating month mean....')
         month_mean = self.calculate_month_mean(data, param)
         print(month_mean.head(3))
         print('then calculating year mean on the month mean timeseries...')
         year_mean = month_mean.groupby(["STATN", "REG_ID", "YEAR", "Depth_interval", "variable"]).agg(year_mean=('month_mean', 'mean'),
-                        count=('month_mean', 'count')).reset_index()
+                        count=('month_mean', 'count'),
+                        unique=('MONTH', 'unique')).reset_index().round(3)
         
         # mean_data = (data.groupby(["STATN", "REG_ID", "YEAR", "Depth_interval"])
         #             .agg(mean=('mean', 'mean'),

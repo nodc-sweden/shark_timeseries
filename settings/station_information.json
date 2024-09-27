@@ -217,7 +217,8 @@
         "STN_BW": 80.0,
         "BASIN_BW": 180.0,
         "BASIN_SEVM": "Sydöstra Egentliga Östersjön ",
-        "HAVET_BW": 80.0
+        "HAVET_BW": 80.0, 
+        "synonyms": ["4-CTRY-BP", "BCS III-10 NE"]
     },
     "PL-P1": {
         "TYPE": "MAPPING",
@@ -377,7 +378,11 @@
         "STN_BW": 440.0,
         "BASIN_BW": 180.0,
         "BASIN_SEVM": "Centrala och Norra Östersjön",
-        "HAVET_BW": 180.0
+        "HAVET_BW": 180.0,
+        "LATIT_max": 58.617,
+        "LATIT_min": 58.32,
+        "LONGI_max": 18.258,
+        "LONGI_min": 18.217
     },
     "B1": {
         "TYPE": "MONTHLY",
@@ -437,7 +442,8 @@
         "STN_BW": 80.0,
         "BASIN_BW": 80.0,
         "BASIN_SEVM": "Bottenhavet",
-        "HAVET_BW": 80.0
+        "HAVET_BW": 80.0,
+        "synonyms": ["MS4", "C14"]
     },
     "C3": {
         "TYPE": "MONTHLY",
@@ -647,7 +653,8 @@
         "STN_BW": 120.0,
         "BASIN_BW": 80.0,
         "BASIN_SEVM": "Bottenviken",
-        "HAVET_BW": 80.0
+        "HAVET_BW": 80.0,
+        "synonyms": ["F9", "A13"]
     },
     "F3 / A5": {
         "TYPE": "MONTHLY",
@@ -657,7 +664,8 @@
         "STN_BW": 80.0,
         "BASIN_BW": 80.0,
         "BASIN_SEVM": "Bottenviken",
-        "HAVET_BW": 80.0
+        "HAVET_BW": 80.0,
+        "synonyms": ["F3", "A5"]
     },
     "F2": {
         "TYPE": "MAPPING",
