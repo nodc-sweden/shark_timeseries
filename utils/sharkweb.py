@@ -44,13 +44,12 @@ class Datasource:
         if not datatype:
             raise AssertionError("ERROR: no download, missing datatype")
 
-        print(name)
-        self.filename = self._get_filepath(name, datatype, year_interval)
+        self.filepath = self._get_filepath(name, datatype, year_interval)
 
         if self.no_download:
-            if not self.filename.exists():
+            if not self.filepath.exists():
                 raise FileNotFoundError(
-                    f"{self.filename} does not exist, choose download"
+                    f"{self.filepath} does not exist, choose download"
                 )
             return None
 
@@ -97,12 +96,11 @@ class Datasource:
             ) as data_response:
                 data_response.raise_for_status()
                 chunk_size = 1024 * 1024
-                with open(self.filename, "wb") as data_file:
+                with open(self.filepath, "wb") as data_file:
                     for chunk in data_response.iter_content(chunk_size=chunk_size):
                         if not chunk:
                             continue
                         data_file.write(chunk)
-        print(self.filename)
 
     def _get_tableView(self, datatype):
         if datatype == "Physical and Chemical":

@@ -1,0 +1,46 @@
+{
+    "Gulf_of_Bothnia": {
+        "datatype": "Physical and Chemical",
+        "year_interval": [
+            2000,
+            2023
+        ],
+        "stations": [
+            "MS4 / C14",
+            "F9 / A13"
+        ],
+        "no_download": true,
+        "name": "GoF"
+    },
+    "Skagerrak_Kattegat": {
+        "datatype": "Physical and Chemical",
+        "year_interval": [
+            2000,
+            2023
+        ],
+        "stations": [
+            "Å17",
+            "Å13",
+            "FLADEN",
+            "ANHOLT E"
+        ],
+        "no_download": true,
+        "name": "WC"
+    },
+    "Baltic_Proper": {
+        "datatype": "Physical and Chemical",
+        "year_interval": [
+            2000,
+            2023
+        ],
+        "stations": [
+            "BY2 ARKONA",
+            "BY5 BORNHOLMSDJ",
+            "BY15 GOTLANDSDJ",
+            "BY31 LANDSORTSDJ",
+            "BY32 NORRKÖPINGSDJ"
+        ],
+        "no_download": true,
+        "name": "BP"
+    }
+}

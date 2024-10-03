@@ -5,19 +5,17 @@ Created on Wed Mar 14 09:26:17 2018
 @author: a002087
 """
 
-import sys
 import re
 import pandas as pd
 import numpy as np
 import datetime as dt
 import matplotlib.dates as mpldates
+from decimal import Decimal, ROUND_HALF_UP
+import pathlib
+from utils import calculateparameter as calculateparameter
 
 new_epoch = "1970-01-01T00:00:00"
 mpldates.set_epoch(new_epoch)
-from decimal import Decimal, ROUND_HALF_UP
-import os
-import pathlib
-from utils import calculateparameter as calculateparameter
 
 columns = [
     "DTYPE",
@@ -174,13 +172,13 @@ class FormatData:
             "LONGI_DD",
         ]
 
-    def load_raw_data(self, file_name):
+    def load_raw_data(self, file_path):
         """
         reads textfiles from sharkweb with short headers or from lims export
         """
 
-        file_path = pathlib.Path(self.result_directory, file_name)
-        print(f"reading file {file_path}\n... ... ...".format(self.result_directory))
+        file_path  # = pathlib.Path(self.result_directory, file_name)
+        print(f"reading file {file_path}\n... ... ...")
         data_columns = pd.read_csv(
             open(file_path, encoding=self.encoding), sep="\t", nrows=1
         )
@@ -719,10 +717,10 @@ if __name__ == "__main__":
 
     for file in file_list:
         # read data and format
-        if pathlib.Path(f"{folder_data}/{file}_formatted__{today}.txt").exists():
+        if pathlib.Path(f"{folder_data}/{file}_formatted_{today}.txt").exists():
             continue
         data = FormatData(result_directory=folder_data).load_raw_data(
-            file_name=f"{file}.txt"
+            file_path=f"{file}.txt"
         )
         # save the result
         data.to_csv(

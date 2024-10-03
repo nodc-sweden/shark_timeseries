@@ -36,7 +36,7 @@ class Means():
     def load_calculated_df(self, path):
         print("load file {}".format(path))
         # TODO: check if file exists, else return to read_path
-        self.data = pd.read_csv(open(path, encoding="cp1252"), sep="\t")
+        self.data = pd.read_csv(open(path, encoding="cp1252"), parse_dates=["SDATE"], sep="\t")
         print("loading done")
 
     def format_check(self):
@@ -44,6 +44,9 @@ class Means():
         for column in ["STATN", "SDATE"]:
             if not column in self.data.columns:
                 raise KeyError(f"missing {column} in data. Make sure to format data using format_raw_data.py")
+            
+        # Konvertera 'SDATE' till datetime-format
+        # self.data['SDATE'] = pd.to_datetime(self.data['SDATE'], format='%Y-%m-%d', errors='coerce')
 
     def save_data(self, save_path, data, save_format = ['txt']):
 
@@ -63,6 +66,7 @@ class Means():
         Create additional columns
         for the date in different formats.
         """
+        print(data["SDATE"].head())
         data["YEAR"] = data["SDATE"].dt.year
         data["MONTH"] = data["SDATE"].dt.month
         data["DAY"] = data["SDATE"].dt.day
@@ -73,20 +77,19 @@ class Means():
         print(data.columns)        
         return data
 
-    def _get_depth_range(self, depth):
+    def _get_depth_range(self, depth: list):
         """
         Get the depth range based on the input parameter
         """
-        if isinstance(depth, list):  # If depth is a list
-            for d in depth:
-                if not isinstance(d, (float, int)):
-                    raise ValueError(f"Invalid depth {repr(d)} of {type(d)}, must be float or integer")
-            if len(depth) == 1:
-                return depth[0], depth[0]
-            elif len(depth) == 2:
-                return min(depth), max(depth) 
-            else:
-                raise ValueError("Invalid depth, must be a list with length 1 or 2")
+        if not isinstance(depth, list):  # If depth is a list
+            raise ValueError("Invalid depth, must be a list with length 1 or 2")
+        if not len(depth) <= 2:
+            raise ValueError("Invalid depth, must be a list with length 1 or 2")
+        for d in depth:
+            if not isinstance(d, (float, int)):
+                raise ValueError(f"Invalid depth {repr(d)} of {type(d)}, must be float or integer")
+        
+        return min(depth), max(depth)             
 
     def _get_depth_str(self, depth):
 
@@ -163,19 +166,41 @@ class Means():
     def calculate_depth_means(self, depth, BW_type=""):
 
         df_selection = self.filter_by_depth(depth, BW_type)
-
+        # Definiera vilka parametrar som ska tas med i aggregeringen
         value_cols = ["SALT", "TEMP", "PHOS", "SIO3-SI", "sumNOx", "NTRA", 
                     "NTRZ", "AMON", "din_complex", "din_simple", "O2_H2S", "O2sat", "H2S_padded", "NTOT", "PTOT", "CPHL", 
                     "DEPH", "PH", "ALKY",]
+        # Definiera kolumner att gruppera på
+        group_cols = ["STATN", "REG_ID", "SDATE", "YEAR", "MONTH", "DAY", "Depth_interval"]
+        # Definiera aggregeringsfunktioner och deras namn
+        agg_funcs = {
+            "mean": "mean",
+        #     "std": "std",
+        #     "count": "count",
+        #     "max": "max",
+        #     "min": "min",
+        #     "95p": lambda x: np.percentile(x, 95),
+        #     "5p": lambda x: np.percentile(x, 5),
+        }
+
+        # Skapa dictionary för aggregering
+        agg_dict = {
+            param: list(agg_funcs.values())
+            for param in value_cols
+        }
+
+        # Utför gruppering och aggregering
+        grouped = df_selection.groupby(group_cols).agg(agg_dict)
 
         # Calculate mean by station and date
         # Leaves only the columns used in groupby call and values_cols
         df_depth_mean = (
-            df_selection.groupby(["STATN", "REG_ID", "SDATE", "YEAR", "MONTH", "DAY", "Depth_interval"])
+            df_selection.groupby(group_cols)
             .agg(dict.fromkeys(value_cols, "mean"))
             .reset_index()
         )
-
+        print(list(grouped.columns))
+        print(list(df_depth_mean.columns))
         # this adds necessary columns for date, year, and month
         try:
             df_depth_mean = self.format_date_columns(df_depth_mean)
@@ -200,22 +225,12 @@ class Means():
             for interval_x in interval:
                 result.append(self.calculate_depth_means(interval_x, BW_type))
             df_depth_mean = pd.concat(result)
-            # self.save_data(save_path=f"{save_path}_multiple_mean", data=df_depth_mean)
         else:
             df_depth_mean = self.calculate_depth_means(interval, BW_type)
-            # if interval[0] == 0 and interval[1] == 10:
-            #     self.save_data(save_path=f"{save_path}_surface_mean", data=df_depth_mean)
-            # else:
-            #     self.save_data(save_path=f"{save_path}_{interval[0]}-{interval[1]}_mean", data=df_depth_mean)
         
         self.df_depth_mean = df_depth_mean
         
         return df_depth_mean
-
-    # def calculate_BW_mean(self, save_path, BW_type="STATN"):
-    #     # data = load_calculated_df(load_path)
-    #     df_depth_mean = self.calculate_depth_means("BW", BW_type)
-    #     self.save_data(save_path=f"{save_path}_{BW_type}_bottom_mean", data=df_depth_mean)
 
     def calculate_month_mean(self, data: pd.DataFrame, param: list):
         # Calculate mean by station and date
@@ -276,10 +291,6 @@ class Means():
         return final_result
         # Calculate mean by station and date
         # Leaves only the columns used in groupby call and values_cols
-        # print('first calculating month mean....')
-        # month_mean = self.calculate_month_mean(data_selection, param)
-        # print(month_mean.head(3))
-        # print('then calculating season mean on the month mean timeseries...')
         season_mean = (
             data_selection.loc[data_selection].groupby(["STATN", "REG_ID", "YEAR", "Depth_interval"])
             .agg(value=(param, 'mean'),
@@ -348,7 +359,7 @@ if __name__ == "__main__":
     print(today)
     
     folder_data = f"../data"
-    file_list = ["Å17_area_1960-2024_formatted_2024-02-22",
+    file_list = ["sharkweb_Physical and Chemical_1960-2024.txt_formatted",
                 #  "sharkweb_data_20210607_1960_2020_fyskem_formatted_2023-06-07",
                 #  "sharkweb_data_20220318_2020-2021_fyskem_formatted_2023-06-07",
                 #  "sharkweb_data_20230824_2021-2022_fyskem_formatted_2023-08-24"
@@ -357,7 +368,8 @@ if __name__ == "__main__":
     for file in file_list:
         # if pathlib.Path(f"{folder_data}/{file}_mean_{today}.txt").exists:
         #     continue
-        Means(data = None, result_directory=f"{folder_data}", file_name=f'{file}.txt').calculate_depth_interval_mean(save_path=f"{folder_data}/{file}_mean_{today}", interval = [[0,10], 'BW'], BW_type = 'STATN')
+        means = Means(data = None, result_directory=f"{folder_data}/temp", file_name=f'{file}.txt')
+        means.calculate_depth_interval_mean(save_path=f"{folder_data}/{file}_mean_{today}", interval = [[0,10], 'BW'], BW_type = 'STATN')
         # calculate_BW_mean(load_path=f"{data_folder}/raw/{file}.txt", save_path=f"{data_folder}/aggregated/{file}_{today}", BW_type="STATN")
 
     # folder_data = "C:/LenaV/python3/w_annualreport/data/arsrapport/2022"
