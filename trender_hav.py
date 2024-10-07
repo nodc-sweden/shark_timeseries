@@ -29,7 +29,7 @@ def get_data(
 
 
 if __name__ == "__main__":
-    with open("./settings/trender_HaV_download_specs.json") as file:
+    with open("./settings/download_specs_trender_HaV.json") as file:
         download_specs = json.load(fp=file)
 
     data_list = []

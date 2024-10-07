@@ -10,6 +10,7 @@ import pickle
 import json
 import os
 import pathlib
+from utils.format_raw_data import get_date_columns
 
 current_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(current_path)
@@ -42,11 +43,8 @@ class Means():
     def format_check(self):
 
         for column in ["STATN", "SDATE"]:
-            if not column in self.data.columns:
+            if column not in self.data.columns:
                 raise KeyError(f"missing {column} in data. Make sure to format data using format_raw_data.py")
-            
-        # Konvertera 'SDATE' till datetime-format
-        # self.data['SDATE'] = pd.to_datetime(self.data['SDATE'], format='%Y-%m-%d', errors='coerce')
 
     def save_data(self, save_path, data, save_format = ['txt']):
 
@@ -67,14 +65,8 @@ class Means():
         for the date in different formats.
         """
         print(data["SDATE"].head())
-        data["YEAR"] = data["SDATE"].dt.year
-        data["MONTH"] = data["SDATE"].dt.month
-        data["DAY"] = data["SDATE"].dt.day
+        get_date_columns(data, "SDATE")
 
-        if not 'numDATE' in data.columns:
-            data["numDATE"] = data.SDATE.apply(lambda x: mpldates.date2num(x))
-
-        print(data.columns)        
         return data
 
     def _get_depth_range(self, depth: list):

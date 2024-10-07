@@ -13,6 +13,7 @@ import matplotlib.dates as mpldates
 from decimal import Decimal, ROUND_HALF_UP
 import pathlib
 from utils import calculateparameter as calculateparameter
+from utils.sharkweb import Datasource
 
 new_epoch = "1970-01-01T00:00:00"
 mpldates.set_epoch(new_epoch)
@@ -158,6 +159,45 @@ columns = [
 ]
 
 
+def get_data(
+    result_directory,
+    datatype: str,
+    year_interval: list,
+    stations: list,
+    bounds: list,
+    no_download: bool,
+    name: str='',
+):
+    datasource = Datasource(
+        result_directory=result_directory,
+        datatype=datatype,
+        year_interval=year_interval,
+        stations=stations,
+        bounds=bounds,
+        no_download=no_download,
+        name=name,
+    )
+    return FormatData(datasource.result_directory).load_raw_data(
+        file_path=datasource.filepath
+    )
+
+def save(dataframe: pd.DataFrame, path: str):
+    dataframe.to_csv(pathlib.Path(path), sep="\t", encoding="utf-8", index=False)
+
+def get_date_columns(data, date_column_name):
+
+    """
+    Create additional columns
+    for the date in different formats.
+    """
+    data["strDATE"] = data["SDATE"].dt.strftime("%Y-%m-%d")
+    data["dtDATE"] = pd.to_datetime(data["SDATE"], format="%Y-%m-%d")
+    data["numDATE"] = mpldates.date2num(data["dtDATE"].values)
+    data["YEAR"] = data["SDATE"].dt.year
+    data["MONTH"] = data["SDATE"].dt.month
+    data["DAY"] = data["SDATE"].dt.day
+
+    
 class FormatData:
     def __init__(self, result_directory: str) -> None:
         self.result_directory = result_directory
@@ -562,12 +602,8 @@ class FormatData:
         Create additional columns
         for the date in different formats.
         """
+        get_date_columns(data, "SDATE")
         data["strDATE"] = data["SDATE"].dt.strftime("%Y-%m-%d")
-        data["dtDATE"] = pd.to_datetime(data["strDATE"], format="%Y-%m-%d")
-        data["numDATE"] = data["dtDATE"].apply(lambda x: mpldates.date2num(x))
-        data["YEAR"] = data["SDATE"].dt.year
-        data["MONTH"] = data["SDATE"].dt.month
-        data["DAY"] = data["SDATE"].dt.day
 
         self.columns_to_keep.extend(["strDATE", "numDATE", "YEAR", "DAY"])
 
